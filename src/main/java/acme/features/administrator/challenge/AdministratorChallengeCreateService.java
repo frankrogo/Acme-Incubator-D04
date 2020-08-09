@@ -76,14 +76,14 @@ public class AdministratorChallengeCreateService implements AbstractCreateServic
 		Money expertReward = entity.getExpertReward();
 		boolean eurRookieReward, eurAverageReward, eurExpertReward, averageMoreThanRookie, expertMoreThanAverage;
 
-		if (!errors.hasErrors("rookieReward")) {
+		if (!errors.hasErrors("rookieReward") && averageReward != null) {
 			eurRookieReward = rookieReward.getCurrency().equals("EUR") || rookieReward.getCurrency().equals("€");
 			errors.state(request, eurRookieReward, "rookieReward", "administrator.challenge.error.eurRookieReward");
 
 			averageMoreThanRookie = averageReward.getAmount() > rookieReward.getAmount();
 			errors.state(request, averageMoreThanRookie, "rookieReward", "administrator.challenge.error.averageMoreThanRookie");
 		}
-		if (!errors.hasErrors("averageReward")) {
+		if (!errors.hasErrors("averageReward") && expertReward != null) {
 			eurAverageReward = averageReward.getCurrency().equals("EUR") || averageReward.getCurrency().equals("€");
 			errors.state(request, eurAverageReward, "averageReward", "administrator.challenge.error.eurAverageReward");
 

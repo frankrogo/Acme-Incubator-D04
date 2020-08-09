@@ -6,7 +6,7 @@
 <acme:form>
 	<acme:form-textbox code="administrator.inquiry.form.label.title" path="title"/>
 	<jstl:if test="${command != 'create'}">
-		<acme:form-moment code="administrator.inquiry.form.label.creationMoment" path="creationMoment"/>
+		<acme:form-moment code="administrator.inquiry.form.label.creationMoment" readonly="true" path="creationMoment"/>
 	</jstl:if>	
 	<acme:form-moment code="administrator.inquiry.form.label.deadline" path="deadline"/>
 	<acme:form-textarea code="administrator.inquiry.form.label.description" path="description"/>

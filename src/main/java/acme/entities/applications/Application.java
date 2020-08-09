@@ -47,7 +47,7 @@ public class Application extends DomainEntity {
 	private Money				moneyOffer;
 
 	@NotBlank
-	@Pattern(regexp = "^(PENDING|ACCEPTED|REJECTED)$")
+	@Pattern(regexp = "^(pending|accepted|rejected)$")
 	private String				status;
 
 	//Relationships

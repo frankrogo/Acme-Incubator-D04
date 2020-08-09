@@ -40,7 +40,7 @@
 
 	<bean name="bookkeeper1Bookkeeper" class="acme.entities.roles.Bookkeeper">
 		<property name="firm" value="Bookkeeper One" />
-		<property name="responsibilityStatement" value="Statement example" />
+		<property name="responsabilityStatement" value="Statement example" />
 		<property name="userAccount" ref="bookkeeper1UserAccount" />
 	</bean>
 
@@ -69,7 +69,7 @@
 
 	<bean name="bookkeeper2Bookkeeper" class="acme.entities.roles.Bookkeeper">
 		<property name="firm" value="Bookkeeper Two" />
-		<property name="responsibilityStatement" value="Statement example" />
+		<property name="responsabilityStatement" value="Statement example" />
 		<property name="userAccount" ref="bookkeeper2UserAccount" />
 	</bean>
 	
@@ -101,8 +101,8 @@
 	<bean name="entrepreneur1Entrepreneur" class="acme.entities.roles.Entrepreneur">
 		<property name="startup" value="Entrepreneur 1 Corporative" />
 		<property name="sector" value="Sector 1" />
-		<property name="qualificationRecord" value="Qualifications" />
-		<property name="skillsRecord" value="Skills" />
+		<property name="qualifications" value="Qualifications" />
+		<property name="skills" value="Skills" />
 		<property name="userAccount" ref="entrepreneur1UserAccount" />
 	</bean>
 
@@ -132,8 +132,8 @@
 	<bean name="entrepreneur2Entrepreneur" class="acme.entities.roles.Entrepreneur">
 		<property name="startup" value="Entrepreneur 2 Corporative" />
 		<property name="sector" value="Sector 2" />
-		<property name="qualificationRecord" value="Qualifications" />
-		<property name="skillsRecord" value="Skills" />
+		<property name="qualifications" value="Qualifications" />
+		<property name="skills" value="Skills" />
 		<property name="userAccount" ref="entrepreneur2UserAccount" />
 	</bean>
 
@@ -205,7 +205,7 @@
 	
 	<!-- Investment Rounds -->
 	
-	<bean name="investmentRound01" class="acme.entities.investmentrounds.InvestmentRound">
+	<bean name="investmentRound01" class="acme.entities.investmentRounds.InvestmentRound">
         <property name="ticker" value="SEC-19-000000" />
         <property name="creationMoment" value="2019/02/27 00:00" />
         <property name="round" value="ANGEL" />
@@ -213,31 +213,31 @@
         <property name="description" value="Description" />
         <property name="moneyAmount" value="€ 1000" />
         <property name="moreInfo" value="http://www.invroundone.com/" />
-        <property name="status" value="false" />
+        <property name="finalMode" value="false" />
         <property name="entrepreneur" ref="entrepreneur1Entrepreneur" />
      </bean>
      
-     <bean name="investmentRound02" class="acme.entities.investmentrounds.InvestmentRound">
+     <bean name="investmentRound02" class="acme.entities.investmentRounds.InvestmentRound">
         <property name="ticker" value="SEC-20-000001" />
-        <property name="creationMoment" value="2020/12/12 00:00" />
+        <property name="creationMoment" value="2020/05/12 00:00" />
         <property name="round" value="SERIES-C" />
         <property name="title" value="Investment Round 2" />
         <property name="description" value="Description" />
         <property name="moneyAmount" value="€ 400.25" />
         <property name="moreInfo" value="http://www.invroundtwo.com/" />
-        <property name="status" value="true" />
+        <property name="finalMode" value="true" />
         <property name="entrepreneur" ref="entrepreneur2Entrepreneur" />
      </bean>
      
-     <bean name="investmentRound01" class="acme.entities.investmentrounds.InvestmentRound">
+     <bean name="investmentRound03" class="acme.entities.investmentRounds.InvestmentRound">
         <property name="ticker" value="SEC-20-000000" />
         <property name="creationMoment" value="2018/01/05 00:00" />
         <property name="round" value="BRIDGE" />
         <property name="title" value="Investment Round 3" />
         <property name="description" value="Description" />
-        <property name="moneyAmount" value="€ 5000.000" />
+        <property name="moneyAmount" value="€ 5,000.41" />
         <property name="moreInfo" value="http://www.invroundthree.com/" />
-        <property name="status" value="true" />
+        <property name="finalMode" value="true" />
         <property name="entrepreneur" ref="entrepreneur2Entrepreneur" />
      </bean>
      
@@ -269,7 +269,7 @@
     
 	<!-- Accounting Records -->
 	
-	<bean name="accountingrecord01" class="acme.entities.accountingrecords.AccountingRecord">
+	<bean name="accountingrecord01" class="acme.entities.accountingRecords.AccountingRecord">
         <property name="title" value="Accounting Record 1" />
         <property name="status" value="true" />
         <property name="creationMoment" value="2019/02/27 00:00" />
@@ -278,7 +278,7 @@
         <property name="investmentRound" ref="investmentRound02" />
     </bean>
     
-    <bean name="accountingrecord02" class="acme.entities.accountingrecords.AccountingRecord">
+    <bean name="accountingrecord02" class="acme.entities.accountingRecords.AccountingRecord">
         <property name="title" value="Accounting Record 2" />
         <property name="status" value="false" />
         <property name="creationMoment" value="2019/02/27 00:00" />
@@ -287,7 +287,7 @@
         <property name="investmentRound" ref="investmentRound02" />
     </bean>
     
-    <bean name="accountingrecord03" class="acme.entities.accountingrecords.AccountingRecord">
+    <bean name="accountingrecord03" class="acme.entities.accountingRecords.AccountingRecord">
         <property name="title" value="Accounting Record 3" />
         <property name="status" value="true" />
         <property name="creationMoment" value="2019/02/27 00:00" />
@@ -296,7 +296,7 @@
         <property name="investmentRound" ref="investmentRound02" />
     </bean>
     
-    <bean name="accountingrecord04" class="acme.entities.accountingrecords.AccountingRecord">
+    <bean name="accountingrecord04" class="acme.entities.accountingRecords.AccountingRecord">
         <property name="title" value="Accounting Record 4" />
         <property name="status" value="true" />
         <property name="creationMoment" value="2019/02/27 00:00" />
@@ -305,7 +305,7 @@
         <property name="investmentRound" ref="investmentRound03" />
     </bean>
     
-    <bean name="accountingrecord05" class="acme.entities.accountingrecords.AccountingRecord">
+    <bean name="accountingrecord05" class="acme.entities.accountingRecords.AccountingRecord">
         <property name="title" value="Accounting Record 5" />
         <property name="status" value="false" />
         <property name="creationMoment" value="2019/02/27 00:00" />

@@ -5,8 +5,10 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<img src ="${header}" alt="administrator.notice.form.label.header"/>
-	<acme:form-textbox code="administrator.notice.form.label.header" path="header"/>
+	<img src ="${header}"  alt="administrator.notice.form.label.header"/>
+	<jstl:if test="${command == 'create'}">
+		<acme:form-textarea placeholder="url,url,url,...," code="administrator.notice.form.label.links" path="links"/>
+	</jstl:if>
 	
 	<acme:form-textbox code="administrator.notice.form.label.title" path="title"/>
 	

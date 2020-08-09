@@ -79,12 +79,30 @@ public class AdministratorNoticeCreateService implements AbstractCreateService<A
 			errors.state(request, future, "deadline", "administrator.notice.error.future-deadline");
 		}
 		//Checked related notices
+
+		boolean comma = this.checkComma(entity.getLinks());
 		boolean linksChecked = this.checkLinks(entity.getLinks());
-		errors.state(request, linksChecked, "links", "administrator.notice.error.links");
+
+		if (!entity.getLinks().isEmpty() && comma == false && linksChecked == true) {
+			errors.state(request, comma, "links", "administrator.notice.error.comma");
+		} else if (!entity.getLinks().isEmpty() && linksChecked == false && comma == true) {
+			errors.state(request, linksChecked, "links", "administrator.notice.error.links");
+		} else if (!entity.getLinks().isEmpty() && comma == false && linksChecked == false) {
+			errors.state(request, comma, "links", "administrator.notice.error.comma");
+			errors.state(request, linksChecked, "links", "administrator.notice.error.links");
+		}
 
 		//Checkbox validation
 		boolean isChecked = request.getModel().getBoolean("checked");
 		errors.state(request, isChecked, "checked", "administrator.notice.error.must-check");
+	}
+
+	private boolean checkComma(final String links) {
+		boolean res = true;
+		if (!links.contains(",")) {
+			res = false;
+		}
+		return res;
 	}
 
 	private boolean checkLinks(final String links) {

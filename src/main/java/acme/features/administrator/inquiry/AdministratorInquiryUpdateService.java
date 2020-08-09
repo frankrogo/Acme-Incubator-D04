@@ -76,16 +76,19 @@ public class AdministratorInquiryUpdateService implements AbstractUpdateService<
 
 		boolean eurMin, eurMax, maxMoreThanMin;
 
-		if (!errors.hasErrors("minMoney")) {
-			eurMin = minMoney.getCurrency().equals("EUR") || minMoney.getCurrency().equals("€");
-			errors.state(request, eurMin, "minMoney", "administrator.inquiry.error.minMoney");
+		if (!errors.hasErrors("maxMoney")) {
+			eurMax = maxMoney.getCurrency().equals("EUR") || maxMoney.getCurrency().equals("€");
+			errors.state(request, eurMax, "maxMoney", "administrator.inquiry.error.maxMoney");
+		}
+
+		if (!errors.hasErrors("minMoney") && maxMoney != null) {
 			maxMoreThanMin = maxMoney.getAmount() > minMoney.getAmount();
 			errors.state(request, maxMoreThanMin, "maxMoney", "administrator.inquiry.error.maxMoreThanMin");
 		}
 
-		if (!errors.hasErrors("maxMoney")) {
-			eurMax = maxMoney.getCurrency().equals("EUR") || maxMoney.getCurrency().equals("€");
-			errors.state(request, eurMax, "maxMoney", "administrator.inquiry.error.maxMoney");
+		if (!errors.hasErrors("minMoney")) {
+			eurMin = minMoney.getCurrency().equals("EUR") || minMoney.getCurrency().equals("€");
+			errors.state(request, eurMin, "minMoney", "administrator.inquiry.error.minMoney");
 		}
 	}
 
