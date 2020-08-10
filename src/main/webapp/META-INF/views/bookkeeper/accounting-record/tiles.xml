@@ -18,12 +18,12 @@
 
 <tiles-definitions>
 
-	<definition name="bookkeeper/investment-round/list" extends="master">		
-		<put-attribute name="body" type="template" value="../bookkeeper/investment-round/list.jsp" />
+	<definition name="bookkeeper/accounting-record/list" extends="master">		
+		<put-attribute name="body" type="template" value="../bookkeeper/accounting-record/list.jsp" />
 	</definition>
 	
-	<definition name="bookkeeper/investment-round/form" extends="master">
-		<put-attribute name="body" type="template" value="../bookkeeper/investment-round/form.jsp" />
+	<definition name="bookkeeper/accounting-record/form" extends="master">
+		<put-attribute name="body" type="template" value="../bookkeeper/accounting-record/form.jsp" />
 	</definition>
 
 </tiles-definitions>

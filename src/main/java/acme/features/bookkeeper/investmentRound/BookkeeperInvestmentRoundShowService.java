@@ -37,8 +37,11 @@ public class BookkeeperInvestmentRoundShowService implements AbstractShowService
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+
+		int investmentRoundId = request.getModel().getInteger("id");
 		request.unbind(entity, model, "ticker", "title", "creationMoment", "round", "description", "moneyAmount", "moreInfo", "finalMode");
-		model.setAttribute("investmentRoundId", entity.getId());
+		model.setAttribute("investmentRoundId", investmentRoundId);
+		//model.setAttribute("investmentRoundId", entity.getId());
 		model.setAttribute("investmentRoundTicker", entity.getTicker());
 	}
 

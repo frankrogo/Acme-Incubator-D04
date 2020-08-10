@@ -12,6 +12,9 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface BookkeeperAccountingRecordRepository extends AbstractRepository {
 
+	@Query("select ar from AccountingRecord ar where ar.investmentRound.id =?1 and ar.status = true")
+	Collection<AccountingRecord> findAllByInvestmentRoundId(int investmentRoundId);
+
 	@Query("select ar from AccountingRecord ar where ar.bookkeeper.id =?1")
 	Collection<AccountingRecord> findManyByBookkeeperId(int entrepreneurId);
 

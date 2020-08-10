@@ -19,6 +19,8 @@
 <acme:list>
 	<acme:list-column code="bookkeeper.accounting-record.list.label.title" path="title" width="40%" />
 	<acme:list-column code="bookkeeper.accounting-record.list.label.creationMoment" path="creationMoment" width="60%" />
+	<acme:list-column code="bookkeeper.accounting-record.list.label.IRoundticker" path="investmentRound.ticker" width="30%"/>/>
+	<acme:list-column code="bookkeeper.accounting-record.list.label.IRoundtitle" path="investmentRound.title" width="30%"/>/>
 </acme:list>
 
 

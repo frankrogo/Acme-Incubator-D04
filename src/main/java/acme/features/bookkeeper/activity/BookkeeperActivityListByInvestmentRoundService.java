@@ -38,10 +38,10 @@ public class BookkeeperActivityListByInvestmentRoundService implements AbstractL
 		assert request != null;
 
 		Collection<Activity> result;
-		int jobId;
+		int investmentRoundId;
 
-		jobId = request.getModel().getInteger("jobId");
-		result = this.repository.findManyByInvestmentRoundId(jobId);
+		investmentRoundId = request.getModel().getInteger("investmentRoundId");
+		result = this.repository.findManyByInvestmentRoundId(investmentRoundId);
 
 		return result;
 	}

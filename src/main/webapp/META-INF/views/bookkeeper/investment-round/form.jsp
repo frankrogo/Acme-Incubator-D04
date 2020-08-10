@@ -26,7 +26,7 @@
 	<acme:form-url code="bookkeeper.investment-round.form.label.moreInfo" path="moreInfo"/>
 	<acme:form-checkbox code="bookkeeper.investment-round.form.label.finalMode" path="finalMode"/>
 	
-	<acme:form-submit code="bookkeeper.investment-round.form.button.activities" action="/bookkeeper/activity/list-by-investment-round?investmentRoundId=${id}"/>
-	<acme:form-submit code="bookkeeper.investment-round.form.button.accounting-records" action="/bookkeeper/accounting-record/list-by-ir?investmentRoundId=${id}"/>
+	<acme:form-submit code="bookkeeper.investment-round.form.button.activities" action="/bookkeeper/activity/list-by-ir?investmentRoundId=${investmentRoundId}" method="get"/>
+	<acme:form-submit code="bookkeeper.investment-round.form.button.accounting-records" action="/bookkeeper/accounting-record/list-by-ir?investmentRoundId=${investmentRoundId}" method="get"/>
   	<acme:form-return code="bookkeeper.investment-round.form.button.return"/>
 </acme:form>

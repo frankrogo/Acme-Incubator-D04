@@ -10,11 +10,10 @@ import acme.entities.accountingRecords.AccountingRecord;
 import acme.entities.roles.Bookkeeper;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class BookkeeperAccountingRecordListMineService implements AbstractListService<Bookkeeper, AccountingRecord> {
+public class BookkeeperAccountingRecordListByIrService implements AbstractListService<Bookkeeper, AccountingRecord> {
 
 	@Autowired
 	BookkeeperAccountingRecordRepository repository;
@@ -31,7 +30,8 @@ public class BookkeeperAccountingRecordListMineService implements AbstractListSe
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "title", "creationMoment", "investmentRound.ticker", "investmentRound.title");
+		request.unbind(entity, model, "title", "creationMoment");
+		request.getModel().setAttribute("listInvestmentRoundId", entity.getInvestmentRound().getId());
 	}
 
 	@Override
@@ -39,10 +39,10 @@ public class BookkeeperAccountingRecordListMineService implements AbstractListSe
 		assert request != null;
 
 		Collection<AccountingRecord> res;
-		Principal principal;
+		int investmentRoundId;
 
-		principal = request.getPrincipal();
-		res = this.repository.findManyByBookkeeperId(principal.getActiveRoleId());
+		investmentRoundId = request.getModel().getInteger("investmentRoundId");
+		res = this.repository.findAllByInvestmentRoundId(investmentRoundId);
 
 		return res;
 	}
