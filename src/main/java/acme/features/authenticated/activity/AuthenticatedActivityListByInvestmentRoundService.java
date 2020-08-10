@@ -1,5 +1,5 @@
 
-package acme.features.entrepreneur.activity;
+package acme.features.authenticated.activity;
 
 import java.util.Collection;
 
@@ -7,16 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.activities.Activity;
-import acme.entities.roles.Entrepreneur;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class EntrepreneurActivityListByInvestmentRoundService implements AbstractListService<Entrepreneur, Activity> {
+public class AuthenticatedActivityListByInvestmentRoundService implements AbstractListService<Authenticated, Activity> {
 
 	@Autowired
-	EntrepreneurActivityRepository repository;
+	AuthenticatedActivityRepository repository;
 
 
 	@Override

@@ -17,9 +17,9 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="entrepreneur.investment-round.list.label.ticker" path="reference" width="20%"/>
+	<acme:list-column code="entrepreneur.investment-round.list.label.ticker" path="ticker" width="20%"/>
 	<acme:list-column code="entrepreneur.investment-round.list.label.title" path="title" width="20%"/>
-	<acme:list-column code="entrepreneur.investment-round.list.label.creationMoment" path="deadline" width="60%"/>
+	<acme:list-column code="entrepreneur.investment-round.list.label.creationMoment" path="creationMoment" width="60%"/>
 </acme:list>
 
 

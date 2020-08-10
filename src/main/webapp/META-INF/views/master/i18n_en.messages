@@ -77,16 +77,22 @@ master.menu.administrator.configuration = Customisation parameters
 
 # master.menu.entrepreneur ########################################################
 
+master.menu.entrepreneur = Entrepreneur
+
 master.menu.entrepreneur.investment-round.list-mine = List my investment rounds
 master.menu.entrepreneur.application.list-mine = List applications made to my inv.rounds
 master.menu.entrepreneur.forum.list-mine = My forums
 
 # master.menu.investor ########################################################
 
+master.menu.investor = Investor
+
 master.menu.investor.application.list-mine = List my applications
 master.menu.investor.forum.list-mine = My forums
 
-# master.menu.bookeeper ########################################################
+# master.menu.bookkeeper ########################################################
+
+master.menu.bookkeeper = Bookkeeper
 
 master.menu.bookkeeper.accounting-record.list-mine = List my accounting records
 master.menu.bookkeeper.investment-round.list-mine = List inv.rounds to which I've written an acc.record

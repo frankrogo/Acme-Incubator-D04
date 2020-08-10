@@ -1,5 +1,5 @@
 
-package acme.features.entrepreneur.accountingRecord;
+package acme.features.authenticated.accountingRecord;
 
 import java.util.Collection;
 
@@ -7,16 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.accountingRecords.AccountingRecord;
-import acme.entities.roles.Entrepreneur;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class EntrepreneurAccountingRecordListMineService implements AbstractListService<Entrepreneur, AccountingRecord> {
+public class AuthenticatedAccountingRecordListByInvestmentRoundService implements AbstractListService<Authenticated, AccountingRecord> {
 
 	@Autowired
-	EntrepreneurAccountingRecordRepository repository;
+	AuthenticatedAccountingRecordRepository repository;
 
 
 	@Override
@@ -31,6 +31,7 @@ public class EntrepreneurAccountingRecordListMineService implements AbstractList
 		assert entity != null;
 		assert model != null;
 		request.unbind(entity, model, "title", "creationMoment");
+		request.getModel().setAttribute("listInvestmentRoundId", entity.getInvestmentRound().getId());
 	}
 
 	@Override

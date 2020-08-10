@@ -1,21 +1,20 @@
 
-package acme.features.entrepreneur.accountingRecord;
+package acme.features.authenticated.accountingRecord;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.accountingRecords.AccountingRecord;
-import acme.entities.roles.Entrepreneur;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Principal;
+import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class EntrepreneurAccountingRecordShowService implements AbstractShowService<Entrepreneur, AccountingRecord> {
+public class AuthenticatedAccountingRecordShowService implements AbstractShowService<Authenticated, AccountingRecord> {
 
 	@Autowired
-	EntrepreneurAccountingRecordRepository repository;
+	AuthenticatedAccountingRecordRepository repository;
 
 
 	@Override
@@ -25,14 +24,10 @@ public class EntrepreneurAccountingRecordShowService implements AbstractShowServ
 		boolean result;
 		int accountingRecordId;
 		AccountingRecord accountingRecord;
-		Entrepreneur entrepreneur;
-		Principal principal;
 
-		principal = request.getPrincipal();
 		accountingRecordId = request.getModel().getInteger("id");
 		accountingRecord = this.repository.findOneById(accountingRecordId);
-		entrepreneur = accountingRecord.getInvestmentRound().getEntrepreneur();
-		result = entrepreneur.getUserAccount().getId() == principal.getAccountId();
+		result = accountingRecord.isStatus();
 
 		return result;
 	}
