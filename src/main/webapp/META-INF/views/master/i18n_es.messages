@@ -52,6 +52,7 @@ master.menu.authenticated.list-tool-record = Lista de registros de herramienta
 master.menu.authenticated.list-inquiry = Lista de consultas
 master.menu.authenticated.list-overture = Lista de propuestas
 master.menu.authenticated.list-challenge = Lista de retos
+master.menu.authenticated.list-investment-round = Lista de rondas de inversión
 
 # master.menu.administrator ###################################################
 
@@ -73,6 +74,23 @@ master.menu.administrator.create-inquiry = Crear consulta
 master.menu.administrator.create-overture = Crear propuesta
 master.menu.administrator.create-challenge = Crear reto
 master.menu.administrator.configuration = Parametros de customización
+
+# master.menu.entrepreneur ########################################################
+
+master.menu.entrepreneur.investment-round.list-mine = Lista de mis rondas de inversión
+master.menu.entrepreneur.application.list-mine = Lista de applicaciones hechas a mis rondas de inversión
+master.menu.entrepreneur.forum.list-mine = Mis foros
+
+# master.menu.investor ########################################################
+
+master.menu.investor.application.list-mine = Lista de mis aplicaciones
+master.menu.investor.forum.list-mine = Mis foros
+
+# master.menu.bookeeper ########################################################
+
+master.menu.bookkeeper.accounting-record.list-mine = Lista de mis registros de contabilidad
+master.menu.bookkeeper.investment-round.list-mine = Lista de rondas de inversión a los que he escrito reg. de contabilidad
+master.menu.bookkeeper.investment-round.list-not-mine = Lista de rondas de inversión a los que no he escrito reg. de contabilidad
 
 # master.menu.provider ########################################################
 

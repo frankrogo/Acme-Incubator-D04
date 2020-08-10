@@ -390,7 +390,7 @@
     
     <bean name="forum03" class="acme.entities.forums.Forum">
         <property name="title" value="Forum 3" />
-        <property name="investmentRound" ref="investmentRound02" />
+        <property name="investmentRound" ref="investmentRound03" />
     </bean>
     
 	<!-- Messages -->
