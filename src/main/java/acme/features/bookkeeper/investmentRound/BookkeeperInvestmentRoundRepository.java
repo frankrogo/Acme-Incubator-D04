@@ -12,12 +12,10 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface BookkeeperInvestmentRoundRepository extends AbstractRepository {
 
-	@Query("select distinct j from Bookkeeper a join a.accountingRecords ar join ar.investmentRound j on a.id=?1")
+	@Query("select a from AccountingRecord a join a.investmentRound ir where a.bookkeeper.id = ?1 and ir.finalMode = true")
 	Collection<InvestmentRound> findManyByBookkeeperId(int id);
-
-	@Query("select j from InvestmentRound j where j not in (select distinct j1 from Bookkeeper a join a.accountingRecords ar join ar.investmentRound j1 where a.id=?1)")
+	@Query("select ir from InvestmentRound ir where not exists(select a from AccountingRecord a where a.investmentRound.id = investmentRound.id and a.bookkeeper.id = ?1) and ir.finalMode = true")
 	Collection<InvestmentRound> findManyByNotMyBookkeeperId(int id);
-
 	@Query("select j from InvestmentRound j where j.id=?1")
 	InvestmentRound findOneById(int id);
 
