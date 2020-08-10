@@ -230,7 +230,7 @@
      </bean>
      
      <bean name="investmentRound03" class="acme.entities.investmentRounds.InvestmentRound">
-        <property name="ticker" value="SEC-20-000000" />
+        <property name="ticker" value="SEC-18-000000" />
         <property name="creationMoment" value="2018/01/05 00:00" />
         <property name="round" value="BRIDGE" />
         <property name="title" value="Investment Round 3" />
