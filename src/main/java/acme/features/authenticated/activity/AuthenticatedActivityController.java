@@ -1,5 +1,5 @@
 
-package acme.features.entrepreneur.activity;
+package acme.features.authenticated.activity;
 
 import javax.annotation.PostConstruct;
 
@@ -9,18 +9,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.components.CustomCommand;
 import acme.entities.activities.Activity;
-import acme.entities.roles.Entrepreneur;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
+import acme.framework.entities.Authenticated;
 
 @Controller
-@RequestMapping("/entrepreneur/activity/")
-public class EntrepreneurActivityController extends AbstractController<Entrepreneur, Activity> {
+@RequestMapping("/authenticated/activity/")
+public class AuthenticatedActivityController extends AbstractController<Authenticated, Activity> {
 
 	@Autowired
-	private EntrepreneurActivityListByInvestmentRoundService	listByInvestmentRoundService;
+	private AuthenticatedActivityListByInvestmentRoundService	listByInvestmentRoundService;
 	@Autowired
-	private EntrepreneurActivityShowService						showService;
+	private AuthenticatedActivityShowService					showService;
 
 
 	@PostConstruct

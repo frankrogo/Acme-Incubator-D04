@@ -1,5 +1,5 @@
 
-package acme.features.entrepreneur.accountingRecord;
+package acme.features.authenticated.accountingRecord;
 
 import javax.annotation.PostConstruct;
 
@@ -9,23 +9,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.components.CustomCommand;
 import acme.entities.accountingRecords.AccountingRecord;
-import acme.entities.roles.Entrepreneur;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
+import acme.framework.entities.Authenticated;
 
 @Controller
-@RequestMapping("/entrepreneur/accounting-record/")
-public class EntrepreneurAccountingRecordController extends AbstractController<Entrepreneur, AccountingRecord> {
+@RequestMapping("/authenticated/accounting-record/")
+public class AuthenticatedAccountingRecordController extends AbstractController<Authenticated, AccountingRecord> {
 
 	@Autowired
-	private EntrepreneurAccountingRecordListMineService	listMineService;
+	private AuthenticatedAccountingRecordListByInvestmentRoundService	listByInvestmentRoundService;
 	@Autowired
-	private EntrepreneurAccountingRecordShowService		showService;
+	private AuthenticatedAccountingRecordShowService					showService;
 
 
 	@PostConstruct
 	private void initialise() {
-		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listMineService);
+		super.addCustomCommand(CustomCommand.LIST_BY_IR, BasicCommand.LIST, this.listByInvestmentRoundService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 	}
 

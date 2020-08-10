@@ -14,7 +14,7 @@ import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class EntrepreneurApplicationListService implements AbstractListService<Entrepreneur, Application> {
+public class EntrepreneurApplicationListMineService implements AbstractListService<Entrepreneur, Application> {
 
 	// Internal state ---------------------------------------------------------
 
@@ -33,7 +33,7 @@ public class EntrepreneurApplicationListService implements AbstractListService<E
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "ticker", "creationMoment");
+		request.unbind(entity, model, "ticker", "creationMoment", "investmentRound.ticker", "investmentRound.title");
 	}
 
 	@Override

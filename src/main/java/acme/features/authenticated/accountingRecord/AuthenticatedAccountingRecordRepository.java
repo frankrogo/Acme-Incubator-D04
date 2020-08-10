@@ -1,5 +1,5 @@
 
-package acme.features.entrepreneur.accountingRecord;
+package acme.features.authenticated.accountingRecord;
 
 import java.util.Collection;
 
@@ -10,9 +10,9 @@ import acme.entities.accountingRecords.AccountingRecord;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface EntrepreneurAccountingRecordRepository extends AbstractRepository {
+public interface AuthenticatedAccountingRecordRepository extends AbstractRepository {
 
-	@Query("select ar from AccountingRecord ar where ar.investmentRound.id =?1 and a.status = true")
+	@Query("select ar from AccountingRecord ar where ar.investmentRound.id =?1 and ar.status = true")
 	Collection<AccountingRecord> findAllByInvestmentRoundId(int investmentRoundId);
 
 	@Query("select ar from AccountingRecord ar where ar.id = ?1")

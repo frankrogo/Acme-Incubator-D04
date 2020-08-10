@@ -16,7 +16,7 @@
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<acme:form>
+<acme:form readonly="true">
 	<acme:form-textbox code="entrepreneur.investment-round.form.label.ticker" path="ticker"/>
 	<acme:form-textbox code="entrepreneur.investment-round.form.label.title" path="title"/>
 	<acme:form-moment code="entrepreneur.investment-round.form.label.creationMoment" path="creationMoment"/>
@@ -26,6 +26,6 @@
 	<acme:form-url code="entrepreneur.investment-round.form.label.moreInfo" path="moreInfo"/>
 	<acme:form-checkbox code="entrepreneur.investment-round.form.label.finalMode" path="finalMode"/>
 	
-	<acme:form-submit code="entrepreneur.investment-round.form.button.activities" action="/authenticated/activity/list-by-investment-round?investmentRoundId=${id}"/>
+	<acme:form-submit code="entrepreneur.investment-round.form.button.activities" action="/entrepreneur/activity/list-by-ir?investmentRoundId=${investmentRoundId}" method="get"/>
   	<acme:form-return code="entrepreneur.investment-round.form.button.return"/>
 </acme:form>
