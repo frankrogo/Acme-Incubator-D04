@@ -1,0 +1,11 @@
+investor.application.form.investmentRoundTicker = Ticker de la ronda de inversión
+investor.application.list.label.ticker = Ticker
+investor.application.list.label.creationMoment = Fecha de creación
+
+investor.application.form.label.ticker = Ticker:
+investor.application.form.label.creationMoment = Fecha de creación:
+investor.application.form.label.statement = Declaración:
+investor.application.form.label.moneyOffer = Oferta monetaria:
+investor.application.form.label.status = Estado:
+
+investor.application.form.button.return = Volver
