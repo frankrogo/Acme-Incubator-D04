@@ -17,8 +17,12 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="investor.application.list.label.ticker" path="reference" width="30%"/>
-	<acme:list-column code="investor.application.list.label.creationMoment" path="creationMoment" width="70%"/>
+	<acme:list-column code="investor.application.list.label.ticker" path="ticker" width="30%"/>
+	<acme:list-column code="investor.application.list.label.creationMoment" path="creationMoment" width="30%"/>
+	<acme:list-column code="investor.application.list.label.IRoundticker" path="investmentRound.ticker" width="30%"/>/>
+	<acme:list-column code="investor.application.list.label.IRoundtitle" path="investmentRound.title" width="30%"/>/>
 </acme:list>
 
-
+<acme:form>
+	<acme:form-return code="investor.application.form.button.return"/>
+</acme:form>

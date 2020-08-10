@@ -17,13 +17,8 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="authenticated.investment-round.list.label.ticker" path="ticker" width="20%"/>
-	<acme:list-column code="authenticated.investment-round.list.label.title" path="title" width="20%"/>
-	<acme:list-column code="authenticated.investment-round.list.label.creationMoment" path="creationMoment" width="60%"/>
+	<acme:list-column code="bookkeeper.accounting-record.list.label.title" path="title" width="40%" />
+	<acme:list-column code="bookkeeper.accounting-record.list.label.creationMoment" path="creationMoment" width="60%" />
 </acme:list>
-
-<acme:form>
-	<acme:form-return code="authenticated.investment-round.form.button.return"/>
-</acme:form>
 
 

@@ -1,0 +1,17 @@
+bookkeeper.accounting-record.list.label.title = Title
+bookkeeper.accounting-record.list.label.creationMoment = Creation moment
+
+bookkeeper.accounting-record.list.label.investmentRoundTicker = Investment Round's ticker
+bookkeeper.accounting-record.form.label.ticker = Ticker:
+bookkeeper.accounting-record.form.label.title = Title:
+bookkeeper.accounting-record.form.label.creationMoment = Creation moment:
+bookkeeper.accounting-record.form.label.round = Round:
+bookkeeper.accounting-record.form.label.description = Description:
+bookkeeper.accounting-record.form.label.moneyAmount = Money amount
+bookkeeper.accounting-record.form.label.moreInfo = More info:
+bookkeeper.accounting-record.form.label.finalMode = Final mode:
+
+
+bookkeeper.accounting-record.form.button.return = Return
+
+

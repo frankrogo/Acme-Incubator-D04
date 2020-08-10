@@ -1,4 +1,6 @@
-investor.application.form.investmentRoundTicker = Ticker de la ronda de inversión
+investor.application.form.investmentRoundTicker = Ticker de la ronda de inversión:
+investor.application.list.label.IRoundticker = Ticker de la ronda de inversión
+investor.application.list.label.IRoundtitle = Título de la ronda de inversión
 investor.application.list.label.ticker = Ticker
 investor.application.list.label.creationMoment = Fecha de creación
 

@@ -19,7 +19,7 @@
 <acme:list>
 	<acme:list-column code="bookkeeper.investment-round.list.label.ticker" path="ticker" width="30%"/>
 	<acme:list-column code="bookkeeper.investment-round.list.label.title" path="title" width="30%"/>
-	<acme:list-column code="bookkeeper.investment-round.list.label.creationMoment" path="deadline" width="40%"/>
+	<acme:list-column code="bookkeeper.investment-round.list.label.creationMoment" path="creationMoment" width="40%"/>
 </acme:list>
 
 

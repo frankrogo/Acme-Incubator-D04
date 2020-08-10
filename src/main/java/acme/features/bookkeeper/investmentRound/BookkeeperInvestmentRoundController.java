@@ -28,7 +28,7 @@ public class BookkeeperInvestmentRoundController extends AbstractController<Book
 	@PostConstruct
 	private void initialise() {
 		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listMineService);
-		super.addCustomCommand(CustomCommand.LIST_OTHERS, BasicCommand.LIST, this.listOthersService);
+		super.addCustomCommand(CustomCommand.LIST_NOT_MINE, BasicCommand.LIST, this.listOthersService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 	}
 
