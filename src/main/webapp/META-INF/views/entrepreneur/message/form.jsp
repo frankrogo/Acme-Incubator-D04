@@ -16,6 +16,8 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form readonly="true">
+	<h4><acme:message readonly = "true" code="entrepreneur.message.form.userName"/> <acme:print value="${userName}"/></h4>
+	<h4><acme:message readonly = "true"recode="entrepreneur.message.form.forumTitle"/> <acme:print value="${forumTitle}"/></h4>
 	<acme:form-textbox code="entrepreneur.message.form.label.title" path="title"/>
 	<acme:form-moment code="entrepreneur.message.form.label.creationMoment" path="creationMoment"/>
 	<acme:form-textarea code="entrepreneur.message.form.label.tags" path="tags"/>

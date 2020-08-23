@@ -17,6 +17,7 @@
 
 <acme:form readonly="true">
 	<h4><acme:message code="entrepreneur.application.form.label.investmentRoundTicker"/> <acme:print value="${investmentRoundTicker}"/></h4><br>
+	<h4><acme:message code="entrepreneur.application.form.label.investmentRoundTitle"/> <acme:print value="${investmentRoundTitle}"/></h4><br>
 	<acme:form-textbox code="entrepreneur.application.form.label.ticker" path="ticker"/>
 	<acme:form-moment code="entrepreneur.application.form.label.creationMoment" path="creationMoment"/>
 	<acme:form-textarea code="entrepreneur.application.form.label.statement" path="statement"/>

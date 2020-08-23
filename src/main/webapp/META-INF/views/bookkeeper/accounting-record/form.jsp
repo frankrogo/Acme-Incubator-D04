@@ -17,6 +17,7 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form readonly="true">
+<acme:form-hidden path="investmentRoundId"/> 
 	<h4><acme:message code="bookkeeper.accounting-record.form.label.investmentRoundTicker"/> <acme:print value="${investmentRoundTicker}"/></h4><br>
 	<acme:form-textbox code="bookkeeper.accounting-record.form.label.title" path="title"/>
 	<acme:form-money code="bookkeeper.accounting-record.form.label.status" path="status"/>

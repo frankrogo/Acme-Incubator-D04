@@ -26,4 +26,10 @@ public interface InvestorMessageRepository extends AbstractRepository {
 	@Query("select i from InvestmentRound i where exists(select a from Application a where a.investor.id = ?1 and a.investmentRound.id = i.id and a.status = 'accepted') and i.id = ?2")
 	Collection<InvestmentRound> findInvestmentRound(int id, int iid);
 
+	@Query("select ua.username from UserAccount ua where ua.id in (select au.userAccount.id from Authenticated au where au.id in (select ms.authenticated.id from Message ms where ms.id = ?1))")
+	String findUser(int messageId);
+
+	@Query("select f from Forum f where f.id=?1")
+	Forum findForumById(int id);
+
 }

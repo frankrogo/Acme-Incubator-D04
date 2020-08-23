@@ -2,6 +2,7 @@
 package acme.entities.configurations;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -20,6 +21,7 @@ public class Configuration extends DomainEntity {
 	private String				spamWords;
 
 	@NotNull
+	@Min(0)
 	private Double				spamThreshold;
 
 	@NotBlank

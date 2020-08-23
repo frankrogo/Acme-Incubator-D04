@@ -68,7 +68,6 @@ public class AdministratorInquiryCreateService implements AbstractCreateService<
 
 		if (!errors.hasErrors("deadline")) {
 			calendar = new GregorianCalendar();
-			calendar.add(Calendar.DAY_OF_MONTH, +7);
 			minimumDeadline = calendar.getTime();
 			boolean future = entity.getDeadline().after(minimumDeadline);
 			errors.state(request, future, "deadline", "administrator.inquiry.error.future-deadline");

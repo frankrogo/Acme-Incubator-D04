@@ -18,14 +18,14 @@ import acme.framework.controllers.AbstractController;
 public class InvestorMessageController extends AbstractController<Investor, Message> {
 
 	@Autowired
-	private InvestorMessageListMineService	listMineService;
+	private InvestorMessageListByForumService	listByForumService;
 	@Autowired
-	private InvestorMessageShowService		showService;
+	private InvestorMessageShowService			showService;
 
 
 	@PostConstruct
 	private void initialize() {
-		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listMineService);
+		super.addCustomCommand(CustomCommand.LIST_BY_FORUM, BasicCommand.LIST, this.listByForumService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 	}
 

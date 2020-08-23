@@ -22,4 +22,7 @@ public interface EntrepreneurMessageRepository extends AbstractRepository {
 	@Query("select m from Message m where m.id = ?1")
 	Message findOneById(int id);
 
+	@Query("select ua.username from UserAccount ua where ua.id in (select au.userAccount.id from Authenticated au where au.id in (select ms.authenticated.id from Message ms where ms.id = ?1))")
+	String findUser(int messageId);
+
 }
