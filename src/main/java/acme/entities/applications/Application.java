@@ -34,7 +34,7 @@ public class Application extends DomainEntity {
 
 	@Column(unique = true)
 	@NotBlank
-	@Length(min = 5, max = 15)
+	@Length(min = 13, max = 13)
 	private String				ticker;
 
 	@NotNull
