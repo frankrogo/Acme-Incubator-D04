@@ -42,7 +42,7 @@ public class AdministratorNoticeCreateService implements AbstractCreateService<A
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "header", "title", "deadline", "body", "links");
+		request.unbind(entity, model, "headerImage", "title", "deadline", "body", "links");
 
 		if (request.isMethod(HttpMethod.GET)) {
 			model.setAttribute("checked", "false");
@@ -79,16 +79,15 @@ public class AdministratorNoticeCreateService implements AbstractCreateService<A
 			errors.state(request, future, "deadline", "administrator.notice.error.future-deadline");
 		}
 		//Checked related notices
+		String linksEntity = entity.getLinks() + ",";
+		String links = linksEntity.replace(", ", ",");
 
-		boolean comma = this.checkComma(entity.getLinks());
-		boolean linksChecked = this.checkLinks(entity.getLinks());
+		boolean linksChecked = this.checkLinks(links);
+		errors.state(request, this.spaces(links), "links", "administrator.notice.error.formatNotices");
 
-		if (!entity.getLinks().isEmpty() && comma == false && linksChecked == true) {
-			errors.state(request, comma, "links", "administrator.notice.error.comma");
-		} else if (!entity.getLinks().isEmpty() && linksChecked == false && comma == true) {
+		if (!entity.getLinks().isEmpty() && linksChecked == false && this.spaces(links)) {
 			errors.state(request, linksChecked, "links", "administrator.notice.error.links");
-		} else if (!entity.getLinks().isEmpty() && comma == false && linksChecked == false) {
-			errors.state(request, comma, "links", "administrator.notice.error.comma");
+		} else if (!entity.getLinks().isEmpty() && linksChecked == false && this.spaces(links)) {
 			errors.state(request, linksChecked, "links", "administrator.notice.error.links");
 		}
 
@@ -96,10 +95,9 @@ public class AdministratorNoticeCreateService implements AbstractCreateService<A
 		boolean isChecked = request.getModel().getBoolean("checked");
 		errors.state(request, isChecked, "checked", "administrator.notice.error.must-check");
 	}
-
-	private boolean checkComma(final String links) {
+	private Boolean spaces(final String links) {
 		boolean res = true;
-		if (!links.contains(",")) {
+		if (links.contains(" ") || links.contains(",,")) {
 			res = false;
 		}
 		return res;

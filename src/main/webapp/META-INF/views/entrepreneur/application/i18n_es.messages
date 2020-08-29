@@ -11,4 +11,4 @@ entrepreneur.application.form.label.moneyOffer = Oferta monetaria:
 entrepreneur.application.form.label.status = Estado:
 
 entrepreneur.application.form.button.return = Volver
-authenticated.activity.list.button.return = Volver
+entrepreneur.activity.list.button.return = Volver

@@ -12,4 +12,4 @@ entrepreneur.application.form.label.moneyOffer = Money offer:
 entrepreneur.application.form.label.status = Status:
 
 entrepreneur.application.form.button.return = Return
-authenticated.activity.list.button.return = Return
+entrepreneur.activity.list.button.return = Return
