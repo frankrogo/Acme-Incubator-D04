@@ -288,6 +288,9 @@
     alter table `application` 
        add constraint UK_ao7wxw7e7mkj6g5q49yq2fw8d unique (`ticker`);
 
+    alter table `investment_round` 
+       add constraint UK_408l1ohatdkkut5bkt0eu6ifs unique (`ticker`);
+
     alter table `user_account` 
        add constraint UK_castjbvpeeus0r8lbpehiu0e4 unique (`username`);
 

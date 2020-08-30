@@ -7,9 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.messages.Message;
+import acme.entities.messengers.Messenger;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
@@ -22,7 +24,18 @@ public class AuthenticatedMessageListByForumService implements AbstractListServi
 	@Override
 	public boolean authorise(final Request<Message> request) {
 		assert request != null;
-		return true;
+		boolean result = false;
+		Collection<Messenger> messengers;
+		Principal principal = request.getPrincipal();
+
+		messengers = this.repository.findMessengersByForumId(request.getModel().getInteger("forumId"));
+		for (Messenger m : messengers) {
+			if (m.getAuthenticated().getUserAccount().getId() == principal.getAccountId()) {
+				result = true;
+				break;
+			}
+		}
+		return result;
 	}
 
 	@Override

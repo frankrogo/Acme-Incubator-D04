@@ -19,10 +19,10 @@ import acme.framework.services.AbstractShowService;
 public class EntrepreneurInvestmentRoundShowService implements AbstractShowService<Entrepreneur, InvestmentRound> {
 
 	@Autowired
-	EntrepreneurInvestmentRoundRepository repository;
-	
+	EntrepreneurInvestmentRoundRepository	repository;
+
 	@Autowired
-	InvestorApplicationRepository applicationRepository;
+	InvestorApplicationRepository			applicationRepository;
 
 
 	@Override
@@ -39,7 +39,7 @@ public class EntrepreneurInvestmentRoundShowService implements AbstractShowServi
 		investmentRound = this.repository.findOneById(investmentRoundId);
 		entrepreneur = investmentRound.getEntrepreneur();
 		principal = request.getPrincipal();
-		result = investmentRound.isFinalMode() || !investmentRound.isFinalMode() && entrepreneur.getUserAccount().getId() == principal.getAccountId();
+		result = entrepreneur.getUserAccount().getId() == principal.getAccountId();
 		return result;
 	}
 
@@ -51,19 +51,18 @@ public class EntrepreneurInvestmentRoundShowService implements AbstractShowServi
 		int investmentRoundId = request.getModel().getInteger("id");
 		request.unbind(entity, model, "ticker", "title", "creationMoment", "round", "description", "moneyAmount", "moreInfo", "finalMode");
 		model.setAttribute("investmentRoundId", investmentRoundId);
-		boolean haveApplications = haveApplications(investmentRoundId);
+		boolean haveApplications = this.haveApplications(investmentRoundId);
 		model.setAttribute("haveApplications", haveApplications);
-		
 
 	}
-	private boolean haveApplications(int investmentRoundId) {
-		boolean res=true;
+	private boolean haveApplications(final int investmentRoundId) {
+		boolean res = true;
 		Collection<Application> applications = this.applicationRepository.findApplicationsByInvestmentRoundId(investmentRoundId);
-		if(applications.size()>0) {
-			res=false;
+		if (applications.size() > 0) {
+			res = false;
 		}
 		return res;
-		
+
 	}
 
 	@Override

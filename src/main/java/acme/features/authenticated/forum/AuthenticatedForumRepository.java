@@ -22,4 +22,7 @@ public interface AuthenticatedForumRepository extends AbstractRepository {
 	@Query("select m from Messenger m where m.ownsTheForum=true and m.forum.id = ?1")
 	Messenger findTheOwner(int id);
 
+	@Query("select m from Messenger m where m.forum.id = ?1")
+	Collection<Messenger> findMessengersByForumId(int id);
+
 }

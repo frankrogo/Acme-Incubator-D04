@@ -1,11 +1,14 @@
 
 package acme.features.authenticated.forum;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.forums.Forum;
 import acme.entities.messengers.Messenger;
+import acme.features.authenticated.messenger.AuthenticatedMessengerRepository;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
@@ -16,22 +19,40 @@ import acme.framework.services.AbstractShowService;
 public class AuthenticatedForumShowService implements AbstractShowService<Authenticated, Forum> {
 
 	@Autowired
-	AuthenticatedForumRepository repository;
+	AuthenticatedForumRepository		repository;
+
+	@Autowired
+	AuthenticatedMessengerRepository	messengerRepository;
 
 
 	@Override
 	public boolean authorise(final Request<Forum> request) {
 		assert request != null;
 
+		assert request != null;
+
 		boolean result;
+		boolean containsMessenger = false;
 		int forumId;
 		Messenger owner;
+		Authenticated auth;
 		Principal principal;
-		forumId = request.getModel().getInteger("id");
-		owner = this.repository.findTheOwner(forumId);
 		principal = request.getPrincipal();
 
-		result = owner.getAuthenticated().getId() == principal.getActiveRoleId();
+		Collection<Messenger> msgs;
+		forumId = request.getModel().getInteger("id");
+		owner = this.repository.findTheOwner(forumId);
+		auth = this.messengerRepository.findAuthByAccountId(principal.getAccountId());
+		msgs = this.repository.findMessengersByForumId(forumId);
+
+		for (Messenger m : msgs) {
+			if (m.getAuthenticated() == auth) {
+				containsMessenger = true;
+				break;
+			}
+
+		}
+		result = owner.getAuthenticated().getId() == principal.getActiveRoleId() || containsMessenger;
 		return result;
 	}
 

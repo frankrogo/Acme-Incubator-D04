@@ -27,5 +27,6 @@
 	<acme:form-checkbox code="entrepreneur.investment-round.form.label.finalMode" path="finalMode"/>
 	
 	<acme:form-submit code="entrepreneur.investment-round.form.button.activities" action="/entrepreneur/activity/list-by-ir?investmentRoundId=${investmentRoundId}" method="get"/>
+	<acme:form-submit code="entrepreneur.investment-round.form.button.accounting-records" action="/entrepreneur/accounting-record/list-by-ir?investmentRoundId=${investmentRoundId}" method="get"/>
   	<acme:form-return code="entrepreneur.investment-round.form.button.return"/>
 </acme:form>
