@@ -16,11 +16,10 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:list>
-
 	<acme:list-column code="entrepreneur.accounting-record.list.label.title" path="title" width="20%"/>
-	<acme:list-column code="entrepreneur.accounting-record.list.label.status" path="status" width="20%"/>
-	<acme:list-column code="entrepreneur.accounting-record.list.label.creationMoment" path="creationMoment" width="60%"/>
-	
+	<acme:list-column code="entrepreneur.accounting-record.list.label.creationMoment" path="creationMoment" width="30%"/>
+	<acme:list-column code="entrepreneur.accounting-record.list.label.status" path="statusl" width="20%"/>
+	<acme:list-column code="entrepreneur.accounting-record.list.label.bookkeeper" path="bookkeeper" width="20%"/>
 </acme:list>
 
 <acme:form-return code="entrepreneur.accounting-record.form.button.return"/>

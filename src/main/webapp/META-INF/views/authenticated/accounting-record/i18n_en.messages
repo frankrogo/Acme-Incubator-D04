@@ -13,9 +13,11 @@ authenticated.accounting-record.investment-round-ticker = Investement Round's ti
 authenticated.accounting-record.list.label.title = Title
 authenticated.accounting-record.list.label.status = Status
 authenticated.accounting-record.list.label.creationMoment = Creation moment
+authenticated.accounting-record.list.label.bookkeeper = Bookkeeper
 
-authenticated.accounting-record.form.label.title = Title
-authenticated.accounting-record.form.label.status = Status
-authenticated.accounting-record.form.label.creationMoment = Creation moment
-authenticated.accounting-record.form.label.body = Body
+authenticated.accounting-record.form.label.bookkeeper = Bookkeeper:
+authenticated.accounting-record.form.label.title = Title:
+authenticated.accounting-record.form.label.status = Status:
+authenticated.accounting-record.form.label.creationMoment = Creation moment:
+authenticated.accounting-record.form.label.body = Body:
 authenticated.accounting-record.form.button.return = Return
