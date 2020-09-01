@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.activities.Activity;
+import acme.entities.investmentRounds.InvestmentRound;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
@@ -20,7 +21,10 @@ public class AuthenticatedActivityShowService implements AbstractShowService<Aut
 	@Override
 	public boolean authorise(final Request<Activity> request) {
 		assert request != null;
-		return true;
+		int investmentRoundId = request.getModel().getInteger("investmentRoundId");
+		InvestmentRound investmentRound = this.repository.findOneIrByIrId(investmentRoundId);
+
+		return investmentRound.isFinalMode();
 	}
 
 	@Override

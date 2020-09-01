@@ -7,7 +7,7 @@
 <acme:form>
 	<acme:form-textbox code="administrator.tool-record.form.label.title" path="title"/>
 	
-	<h5><acme:message code="administrator.technology-record.form.label.sector"  /></h5>
+	<h5><acme:message code="administrator.tool-record.form.label.sector"  /></h5>
        <select name="sector">
           <c:forEach var="item" items="${params}">
             <option value="${item}"${item == sector ? 'selected':''}>${item}</option>
