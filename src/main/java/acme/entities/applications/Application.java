@@ -43,6 +43,7 @@ public class Application extends DomainEntity {
 	private Date				creationMoment;
 
 	@NotBlank
+	@Column(length = 1024)
 	private String				statement;
 
 	@Valid

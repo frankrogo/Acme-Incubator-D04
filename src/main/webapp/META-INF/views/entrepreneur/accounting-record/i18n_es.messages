@@ -9,7 +9,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-entrepreneur.accounting-record.investment-ticker = Ticker de la ronda de inversión
+entrepreneur.accounting-record.investment-round-ticker = Ticker de la ronda de inversión
 
 entrepreneur.audit-record.list.label.title = Título
 entrepreneur.audit-record.list.label.status = Estado

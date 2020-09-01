@@ -8,7 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-entrepreneur.accounting-record.investment-ticker = Investement Round's ticker
+entrepreneur.accounting-record.investment-round-ticker = Investement Round's ticker
 
 entrepreneur.accounting-record.list.label.title = Title
 entrepreneur.accounting-record.list.label.status = Status

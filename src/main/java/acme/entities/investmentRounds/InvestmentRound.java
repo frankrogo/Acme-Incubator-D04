@@ -51,6 +51,7 @@ public class InvestmentRound extends DomainEntity {
 	private String				title;
 
 	@NotBlank
+	@Column(length = 1024)
 	private String				description;
 
 	@NotNull
